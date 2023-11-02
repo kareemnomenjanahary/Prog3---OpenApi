@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: Revision API  
+  version: 1.0.0
+servers:
+  - url: http://revision.com
+paths:
+  /books:
+    get:
+      summary: Get all books
+      description: Return ordered by author name ASC
+      operationId : getBooks 
+      parameters: 
+        - in : query
+        - name : bookName
+        description : filter the return books by 
+        - required : false 
+        - schema : 
+              - type : string
+      response:
+        200 : 
+          description : the returned of books
+          content : 
+              appilcation/ json :
+                schema : 
+                  type : object
+                items : 
+                  type : object 
+                  properties: 
+                    id: 
+                      type : string
+                    bookName:
+                    type : string
+
+    put:                    
+
